@@ -8,7 +8,7 @@ class StringModifyer{
 		  $arr[] = mb_substr( $str, $i, 1);
 		}
 		
-        $reversed_arr = array_reverse($arr);
+		$reversed_arr = array_reverse($arr);
 		
 		$reversed_str = "";
 		for ($i = 0; $i < count($reversed_arr); $i++) {

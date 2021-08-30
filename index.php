@@ -1,6 +1,4 @@
 <?php
-require 'vendor/autoload.php';
-
 class StringModifyer{
 	public static function revertCharacters(string $str) : string {  
 

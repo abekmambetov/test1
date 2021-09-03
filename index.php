@@ -2,7 +2,6 @@
 
 function revertCharacters(string $str) : string {  
      
-	$special_symbols = ['!', '?', ' ', '-', '*']; 
 	for ($i = 0; $i <= mb_strlen($str); $i++) {
 	  
 		$symbol = mb_substr( $str, $i, 1);
@@ -11,12 +10,13 @@ function revertCharacters(string $str) : string {
 			$upperPos[] = $i;
 		}
 
-		if(in_array($symbol, $special_symbols)) {
-			array_unshift($arr , $symbol);
+		if(preg_match('/^\p{L}+$/u', $symbol)) {
+			$arr[] = mb_substr( $str, $i, 1);
+
+		} else {
+						array_unshift($arr , $symbol);
 			$subStrings[] = array_reverse($arr);
 			$arr = [];
-		} else {
-			$arr[] = mb_substr( $str, $i, 1);
 		}
 	}
 	

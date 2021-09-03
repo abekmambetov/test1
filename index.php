@@ -14,7 +14,7 @@ function revertCharacters(string $str) : string {
 			$arr[] = mb_substr( $str, $i, 1);
 
 		} else {
-						array_unshift($arr , $symbol);
+			array_unshift($arr , $symbol);
 			$subStrings[] = array_reverse($arr);
 			$arr = [];
 		}

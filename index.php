@@ -6,7 +6,6 @@ function revertCharacters(string $str) : string {
 	  
 		$symbol = mb_substr( $str, $i, 1);
 
-        
 		if(preg_match('~^\p{Lu}~u', $symbol)) {
 			$upperPos[] = $i;
 		}
